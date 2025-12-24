@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  doctor-service:
+    image: doctor-latest
+    container_name: doctor-container
+    ports:
+      - '8081:8080'
+
+  patient-sevice:
+    image: patient-latest
+    container_name: patient-container
+    ports:
+      - '8082:8080'
