@@ -4,11 +4,22 @@ services:
   doctor-service:
     image: doctor-latest
     container_name: doctor-container
+    depends_on:
+    - patient-sevice
+    networks:
+    - app-network
+
     ports:
       - '8081:8080'
 
   patient-sevice:
     image: patient-latest
     container_name: patient-container
+    networks:
+      - app-network
     ports:
       - '8082:8080'
+
+
+networks:
+  app-network:
